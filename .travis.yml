@@ -7,7 +7,7 @@ install:
   - npm install
 
 script:
-  - npm run test:unit --coverage
+  - nyc npm run test:unit && nyc report --reporter=text-lcov | coveralls
 
 after_script:
   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
