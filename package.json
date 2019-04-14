@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:unit": "mocha --require @babel/register --require ./test/helpers.js --require ./test/dom.js --require ignore-styles 'src/**/*.test.js'",
     "test:unit:watch": "npm run test:unit -- --watch",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls",
     "start": "webpack-dev-server --open --mode development --config webpack.config.js",
     "build": "webpack --mode=production --config webpack.config.js",
     "server": "http-server dist",
